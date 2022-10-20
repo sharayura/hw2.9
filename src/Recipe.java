@@ -19,6 +19,9 @@ public class Recipe {
     }
 
     public void addToRecipe(String name, Integer price, Integer amount) {
+        if (amount == null) {
+            amount = 1;
+        }
         productMap.put(new Product(name, price), amount);
         recipePrice = 0;
         for (Map.Entry<Product, Integer> product : productMap.entrySet()) {
