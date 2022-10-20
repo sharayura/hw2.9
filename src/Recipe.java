@@ -20,11 +20,11 @@ public class Recipe {
         return recipePrice;
     }
 
-    public void addToRecipe(String name, Integer price, Integer amount) {
+    public void addToRecipe(Product product) {
         int size = productSet.size();
-        productSet.add(new Product(name, price, amount));
+        productSet.add(product);
         if (productSet.size() > size) {
-            recipePrice += price * amount;
+            recipePrice += product.getPrice() * product.getAmount();
         }
     }
 

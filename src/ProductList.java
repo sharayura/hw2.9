@@ -1,9 +1,9 @@
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ProductList {
 
-    public List<Product> list = new LinkedList<>();
+    private Set<Product> list = new HashSet<>();
 
     public void addToList(String name, Integer price, Integer amount) {
         for (Product current : list) {

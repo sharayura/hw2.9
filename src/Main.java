@@ -20,20 +20,28 @@ public class Main {
         Recipe porridge = new Recipe("Каша");
         Recipe porridge1 = new Recipe("Каша1");
 
-        smoothie.addToRecipe("банан", 130, 2);
-        smoothie.addToRecipe("киви", 200, 1);
-        smoothie.addToRecipe("яблоко", 100, 1);
-        smoothie.addToRecipe("яблоко", 100, 1);
+        Product banan = new Product("банан", 130, 2);
+        Product kiwi = new Product("киви", 200, 1);
+        Product apple = new Product("яблоко", 100, 1);
+
+        smoothie.addToRecipe(banan);
+        smoothie.addToRecipe(kiwi);
+        smoothie.addToRecipe(apple);
+        smoothie.addToRecipe(apple);
 
         System.out.println(smoothie.getRecipePrice());
 
-        porridge.addToRecipe("хлопья", 100, 2);
-        porridge.addToRecipe("курага", 800, 1);
-        porridge.addToRecipe("финики", 600, 1);
+        Product flakes = new Product("хлопья", 100, 2);
+        Product apricots = new Product("курага", 800, 1);
+        Product dates = new Product("финики", 600, 1);
 
-        porridge1.addToRecipe("хлопья", 100, 2);
-        porridge1.addToRecipe("курага", 800, 1);
-        porridge1.addToRecipe("финики", 600, 1);
+        porridge.addToRecipe(flakes);
+        porridge.addToRecipe(apricots);
+        porridge.addToRecipe(dates);
+
+        porridge1.addToRecipe(flakes);
+        porridge1.addToRecipe(apricots);
+        porridge1.addToRecipe(dates);
 
         RecipeSet recipeSet = new RecipeSet();
         recipeSet.addToRecipeSet(porridge);
@@ -43,7 +51,7 @@ public class Main {
         System.out.println();
 
 ////////////
-        Set<Integer> intSet = new HashSet<>();
+        Set<Integer> intSet = new HashSet<>(20);
         Random rand = new Random();
         while (intSet.size() < 20) {
             intSet.add(rand.nextInt(1001));
