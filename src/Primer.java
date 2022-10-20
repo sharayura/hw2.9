@@ -23,7 +23,7 @@ public class Primer {
 
     @Override
     public int hashCode() {
-        return Objects.hash(0);
+        return Objects.hash(x + y + x * y);
     }
 
     @Override

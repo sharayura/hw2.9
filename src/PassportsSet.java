@@ -1,20 +1,15 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class PassportsList {
-    private List<Passport> passports = new ArrayList<>();
+public class PassportsSet {
+    private Set<Passport> passports = new HashSet<>();
 
-    public List<Passport> getPassports() {
+    public Set<Passport> getPassports() {
         return passports;
     }
 
     public void addPassport(Passport passport) {
-        for (int i = 0; i < passports.size(); i++) {
-            if (passports.get(i).equals(passport)) {
-                passports.set(i, passport);
-                return;
-            }
-        }
+        passports.remove(passport);
         passports.add(passport);
     }
 

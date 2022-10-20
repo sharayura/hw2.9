@@ -27,7 +27,7 @@ public class Main {
                 "Петрович", 23, 6, 1980);
 
 
-        PassportsList passportsList1 = new PassportsList();
+        PassportsSet passportsList1 = new PassportsSet();
         passportsList1.addPassport(passport1);
         passportsList1.addPassport(passport3);
         passportsList1.printAllPassports();
