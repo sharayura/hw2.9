@@ -1,10 +1,8 @@
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Recipe {
     private String name;
-    private Set<Product> productSet = new HashSet<>();
+    private Map<Product, Integer> productMap = new HashMap<>();
     private int recipePrice;
 
     public Recipe(String name) {
@@ -21,10 +19,10 @@ public class Recipe {
     }
 
     public void addToRecipe(String name, Integer price, Integer amount) {
-        int size = productSet.size();
-        productSet.add(new Product(name, price, amount));
-        if (productSet.size() > size) {
-            recipePrice += price * amount;
+        productMap.put(new Product(name, price), amount);
+        recipePrice = 0;
+        for (Map.Entry<Product, Integer> product : productMap.entrySet()) {
+            recipePrice += product.getKey().getPrice() * product.getValue();
         }
     }
 

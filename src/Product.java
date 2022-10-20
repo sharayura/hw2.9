@@ -3,18 +3,13 @@ import java.util.Objects;
 public class Product {
     private String name;
     private Integer price;
-    private Integer amount;
-    private boolean isBought;
 
-    public Product(String name, Integer price, Integer amount) {
-        if (name == null || price == null || amount == null
-                || name.isBlank() || price <= 0 || amount <= 0) {
+    public Product(String name, Integer price) {
+        if (name == null || price == null || name.isBlank() || price <= 0) {
             throw new RuntimeException("Заполните карточку товара полностью!");
         }
         this.name = name;
         this.price = price;
-        this.amount = amount;
-        isBought = false;
     }
 
     public String getName() {
@@ -25,17 +20,6 @@ public class Product {
         return price;
     }
 
-    public Integer getAmount() {
-        return amount;
-    }
-
-    public boolean isBought() {
-        return isBought;
-    }
-
-    public void setBought(boolean bought) {
-        isBought = bought;
-    }
 
     @Override
     public boolean equals(Object o) {
